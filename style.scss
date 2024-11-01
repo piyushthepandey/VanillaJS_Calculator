@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  color: #000; // Set initial text color
+  font-family: 'SF Pro Display Italic';
+  transition: background-color 2s, color 2s;
+  background: url('lofiboy.webp');
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+
+#calculatorCanvas {
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.theme-toggle label {
+  display: block;
+  width: 50px;
+  height: 26px;
+  background-color: #666;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.6s;
+  
+}
+
+.theme-toggle label:after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.6s;
+}
+
+.theme-toggle input[type="checkbox"]:checked + label {
+  background-color: rgb(34, 253, 5);
+  transition: background-color 0.6s;
+}
+
+.theme-toggle input[type="checkbox"]:checked + label:after {
+  left: 25px;
+  transition: left 0.6s;
+}
+
+.dark-mode {
+  background-color: #121212; // Change the background color for dark mode
+  color: #fff; // Change text color for dark mode
+  background-image: url('lofiboy.webp');
+  background-size: cover;
+  transition: background-color 2s;
+    background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+
+.theme-toggle.dark-mode input[type="checkbox"]:checked + label {
+  background-color: #fff;
+  transition: background-color 0.6s;
+}
+
+.theme-toggle.dark-mode input[type="checkbox"]:checked + label:after {
+  left: 1px;
+  transition: left 0.6s;
+}
